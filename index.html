@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>black</title>
+    <style>
+        body {
+            background-color: black;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <script defer>
+        // allows dynamic color setting based on the hash
+        const hash = window.location.hash.substring(1);
+
+        if (hash) {
+            // if the color is named, we don't want to prepend a hash
+            const isValidHexColor = /^([0-9A-Fa-f]{3}){1,2}$/.test(hash);
+
+            document.body.style.backgroundColor = isValidHexColor ? `#${hash}` : hash;
+        }
+    </script>
+</body>
+</html>
