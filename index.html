@@ -16,9 +16,9 @@
     <script defer>
         renderBackgroundColor();
 
-        window.addEventListener("hashchange",renderBackgroundColor);
+        window.addEventListener("hashchange", renderBackgroundColor);
 
-        function renderBackgroundColor(){
+        function renderBackgroundColor() {
             // allows dynamic color setting based on the hash
             const hash = window.location.hash.substring(1);
             if (!hash) return;
