@@ -14,10 +14,15 @@
 </head>
 <body>
     <script defer>
-        // allows dynamic color setting based on the hash
-        const hash = window.location.hash.substring(1);
+        renderBackgroundColor();
 
-        if (hash) {
+        window.addEventListener("hashchange", renderBackgroundColor);
+
+        function renderBackgroundColor() {
+            // allows dynamic color setting based on the hash
+            const hash = window.location.hash.substring(1);
+            if (!hash) return;
+
             // if the color is named, we don't want to prepend a hash
             const isValidHexColor = /^([0-9A-Fa-f]{3}){1,2}$/.test(hash);
 
